@@ -13,7 +13,7 @@ void loop() {
   int sensorValue = analogRead(sensorPin);
   float db = e^((((sensorValue-20)/880)*log(13/5))+log50);
   Serial.println(db);
-  if (db>100){
+  if (db>115){
    long duration,inches,inches1;
    int flag;
    pinMode(pingPin, OUTPUT);
