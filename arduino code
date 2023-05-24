@@ -11,8 +11,9 @@ long microsecondsToInches(long microseconds) {
 }
 void loop() {
   int sensorValue = analogRead(sensorPin);
-  Serial.println(sensorValue);
-  if (sensorValue>800){
+  float db = e^((((sensorValue-20)/880)*log(13/5))+log50);
+  Serial.println(db);
+  if (db>100){
    long duration,inches,inches1;
    int flag;
    pinMode(pingPin, OUTPUT);
